@@ -3,7 +3,7 @@ Summary(pl):	System rozpoznawania mowy
 Name:		sphinx3
 Version:	0.1
 Release:	1
-License:	GPL
+License:	BSD-like
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
 # Source0-md5:	e01ad40f6f41dfac852cd0a45a170d81
@@ -67,7 +67,8 @@ Statyczne wersje bibliotek sphinx3.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # hmm, name may conflict
 rm -f $RPM_BUILD_ROOT%{_bindir}/batch.csh
@@ -90,10 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-# no installable headers (yet?)
-#%%{_includedir}/*
 %attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
+# no installable headers (yet?)
+#%%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
