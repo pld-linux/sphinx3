@@ -1,0 +1,44 @@
+--- sphinx3-0.1/src/libutil/Makefile.am.orig	Tue Nov  5 01:46:24 2002
++++ sphinx3-0.1/src/libutil/Makefile.am	Sat Feb  1 00:03:19 2003
+@@ -1,10 +1,10 @@
+ ARCH   = `uname -m | sed s/i.86/i386/`_`uname -s | tr A-Z a-z`
+ 
+-lib_LTLIBRARIES = libutil.la
++lib_LTLIBRARIES = libs3util.la
+ 
+-libutil_la_LDFLAGS = -version-info 0:1:0
++libs3util_la_LDFLAGS = -version-info 0:1:0
+ 
+-libutil_la_SOURCES = \
++libs3util_la_SOURCES = \
+         bitvec.c \
+         case.c \
+         ckd_alloc.c \
+--- sphinx3-0.1/src/programs/Makefile.am.orig	Mon Nov 18 18:12:13 2002
++++ sphinx3-0.1/src/programs/Makefile.am	Sat Feb  1 00:04:05 2003
+@@ -1,6 +1,6 @@
+ bin_PROGRAMS = livedecode\
+ 	livepretend \
+-	decode \
++	s3decode \
+ 	gausubvq
+ 
+ livedecode_SOURCES =  main_live_example.c \
+@@ -11,7 +11,7 @@
+ 	parse_args_file.c \
+ 	live.c
+ 
+-decode_SOURCES = decode.c \
++s3decode_SOURCES = decode.c \
+ 	parse_args_file.c
+ 
+ gausubvq_SOURCES = gausubvq.c
+@@ -22,7 +22,7 @@
+ 
+ LDADD = $(top_builddir)/src/libs3decoder/libs3decoder.la \
+ 	$(top_builddir)/src/libs3audio/libs3audio.la \
+-	$(top_builddir)/src/libutil/libutil.la \
++	$(top_builddir)/src/libutil/libs3util.la \
+ 	-lm @ad_libs@ 
+ # add these for solaris
+ # -L/usr/demo/SOUND/lib/ -laudio -lnsl -lsocket
