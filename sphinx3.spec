@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
+# Source0-md5:	e01ad40f6f41dfac852cd0a45a170d81
 Patch0:		%{name}-acfix.patch
 Patch1:		%{name}-names.patch
 URL:		http://www.speech.cs.cmu.edu/sphinx/
