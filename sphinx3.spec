@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 # no installable headers (yet?)
-#%{_includedir}/*
+#%%{_includedir}/*
 %attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
 
