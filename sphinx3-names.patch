@@ -1,39 +1,38 @@
---- sphinx3-0.1/src/libutil/Makefile.am.orig	Tue Nov  5 01:46:24 2002
-+++ sphinx3-0.1/src/libutil/Makefile.am	Sat Feb  1 00:03:19 2003
+--- sphinx3-0.5/src/libutil/Makefile.am.orig	2004-11-19 22:30:36.000000000 +0100
++++ sphinx3-0.5/src/libutil/Makefile.am	2005-11-20 12:46:44.499601888 +0100
 @@ -1,10 +1,10 @@
  ARCH   = `uname -m | sed s/i.86/i386/`_`uname -s | tr A-Z a-z`
  
 -lib_LTLIBRARIES = libutil.la
 +lib_LTLIBRARIES = libs3util.la
  
--libutil_la_LDFLAGS = -version-info 0:1:0
-+libs3util_la_LDFLAGS = -version-info 0:1:0
+-libutil_la_LDFLAGS = -version-info 0:4:0
++libs3util_la_LDFLAGS = -version-info 0:4:0
  
 -libutil_la_SOURCES = \
 +libs3util_la_SOURCES = \
          bitvec.c \
          case.c \
          ckd_alloc.c \
---- sphinx3-0.1/src/programs/Makefile.am.orig	Mon Nov 18 18:12:13 2002
-+++ sphinx3-0.1/src/programs/Makefile.am	Sat Feb  1 00:04:05 2003
-@@ -1,6 +1,6 @@
- bin_PROGRAMS = livedecode\
- 	livepretend \
+--- sphinx3-0.5/src/programs/Makefile.am.orig	2004-12-23 22:05:22.000000000 +0100
++++ sphinx3-0.5/src/programs/Makefile.am	2005-11-20 12:47:13.057260464 +0100
+@@ -1,5 +1,5 @@
+ bin_PROGRAMS = livepretend \
 -	decode \
 +	s3decode \
- 	gausubvq
+ 	gausubvq \
+ 	align \
+ 	astar \
+@@ -8,7 +8,7 @@
+ 	ep 
  
- livedecode_SOURCES =  main_live_example.c \
-@@ -11,7 +11,7 @@
- 	parse_args_file.c \
- 	live.c
+ livepretend_SOURCES = main_livepretend.c
+-decode_SOURCES = decode.c
++s3decode_SOURCES = decode.c
+ decode_anytopo_SOURCES = main_decode_anytopo.c s3_dag.c
  
--decode_SOURCES = decode.c \
-+s3decode_SOURCES = decode.c \
- 	parse_args_file.c
- 
- gausubvq_SOURCES = gausubvq.c
-@@ -22,7 +22,7 @@
+ align_SOURCES = main_align.c s3_align.c
+@@ -38,7 +38,7 @@
  
  LDADD = $(top_builddir)/src/libs3decoder/libs3decoder.la \
  	$(top_builddir)/src/libs3audio/libs3audio.la \
@@ -42,3 +41,14 @@
  	-lm @ad_libs@ 
  # add these for solaris
  # -L/usr/demo/SOUND/lib/ -laudio -lnsl -lsocket
+--- sphinx3-0.5/src/tests/programs/Makefile.am.orig	2004-12-14 04:50:15.000000000 +0100
++++ sphinx3-0.5/src/tests/programs/Makefile.am	2005-11-20 13:12:42.876692560 +0100
+@@ -43,7 +43,7 @@
+ 
+ LDADD = $(top_builddir)/src/libs3decoder/libs3decoder.la \
+ 	$(top_builddir)/src/libs3audio/libs3audio.la \
+-	$(top_builddir)/src/libutil/libutil.la \
++	$(top_builddir)/src/libutil/libs3util.la \
+ 	-lm @ad_libs@ 
+ 
+ 
