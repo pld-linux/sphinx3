@@ -1,14 +1,13 @@
 Summary:	Speech recognitnion engine
 Summary(pl):	System rozpoznawania mowy
 Name:		sphinx3
-Version:	0.1
+Version:	0.5
 Release:	1
 License:	BSD-like
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
-# Source0-md5:	e01ad40f6f41dfac852cd0a45a170d81
-Patch0:		%{name}-acfix.patch
-Patch1:		%{name}-names.patch
+# Source0-md5:	71a98518b740f2e80aec86c58148d8c0
+Patch0:		%{name}-names.patch
 URL:		http://www.speech.cs.cmu.edu/sphinx/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -54,7 +53,8 @@ Statyczne wersje bibliotek sphinx3.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+
+find doc -name CVS | xargs rm -rf
 
 %build
 %{__libtoolize}
@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog LICENSE NEWS README doc
+%doc AUTHORS COPYING ChangeLog NEWS README doc
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*.*
 %{_datadir}/%{name}
