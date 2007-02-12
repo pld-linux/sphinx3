@@ -1,5 +1,5 @@
 Summary:	Speech recognitnion engine
-Summary(pl.UTF-8):   System rozpoznawania mowy
+Summary(pl.UTF-8):	System rozpoznawania mowy
 Name:		sphinx3
 Version:	0.5
 Release:	1
@@ -28,7 +28,7 @@ Podłącz mikrofon, uruchom sphinx3-simple i testuj!
 
 %package devel
 Summary:	%{name} header files
-Summary(pl.UTF-8):   Pliki nagłówkowe %{name}
+Summary(pl.UTF-8):	Pliki nagłówkowe %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -40,7 +40,7 @@ Pliki nagłówkowe %{name}.
 
 %package static
 Summary:	Static sphinx3 libraries
-Summary(pl.UTF-8):   Biblioteki statyczne sphinx3
+Summary(pl.UTF-8):	Biblioteki statyczne sphinx3
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
