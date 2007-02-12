@@ -1,5 +1,5 @@
 Summary:	Speech recognitnion engine
-Summary(pl):	System rozpoznawania mowy
+Summary(pl.UTF-8):   System rozpoznawania mowy
 Name:		sphinx3
 Version:	0.5
 Release:	1
@@ -20,34 +20,34 @@ speaker-independent continuous speech recognition engine.
 
 Plug your microphone, launch sphinx3-simple, and test it!
 
-%description -l pl
-System rozpoznawania ci±g≥ej mowy, niezaleøny od mÛwi±cego, z duøym
-s≥ownikiem, pochodz±cy z Carnegie Mellon University.
+%description -l pl.UTF-8
+System rozpoznawania ciƒÖg≈Çej mowy, niezale≈ºny od m√≥wiƒÖcego, z du≈ºym
+s≈Çownikiem, pochodzƒÖcy z Carnegie Mellon University.
 
-Pod≥±cz mikrofon, uruchom sphinx3-simple i testuj!
+Pod≈ÇƒÖcz mikrofon, uruchom sphinx3-simple i testuj!
 
 %package devel
 Summary:	%{name} header files
-Summary(pl):	Pliki nag≥Ûwkowe %{name}
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 %{name} header files.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe %{name}.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe %{name}.
 
 %package static
 Summary:	Static sphinx3 libraries
-Summary(pl):	Biblioteki statyczne sphinx3
+Summary(pl.UTF-8):   Biblioteki statyczne sphinx3
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of sphinx3 libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne wersje bibliotek sphinx3.
 
 %prep
