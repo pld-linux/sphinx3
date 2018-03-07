@@ -1,0 +1,20 @@
+--- sphinx3-0.8/src/libs3decoder/libcfg/s3_cfg.c.orig	2008-12-31 19:27:55.000000000 +0100
++++ sphinx3-0.8/src/libs3decoder/libcfg/s3_cfg.c	2018-03-05 21:12:21.488666006 +0100
+@@ -838,7 +838,7 @@
+     index = s3_cfg_id2index(_rule->products[i]);
+     item = (s3_cfg_item_t *)s3_arraylist_get(&_cfg->item_info, index);
+ 
+-    fprintf(_out, item->name);
++    fputs(item->name, _out);
+     if (i != len - 1)
+       fprintf(_out, " ");
+   }
+@@ -879,7 +879,7 @@
+     index = s3_cfg_id2index(rule->products[i]);
+     item = (s3_cfg_item_t *)s3_arraylist_get(&_cfg->item_info, index);
+ 
+-    fprintf(_out, item->name);
++    fputs(item->name, _out);
+     fprintf(_out, " ");
+   }
+ 

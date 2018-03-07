@@ -1,0 +1,11 @@
+--- sphinx3-0.8/configure.in.orig	2009-01-01 05:23:23.000000000 +0100
++++ sphinx3-0.8/configure.in	2018-03-05 21:31:45.131986051 +0100
+@@ -71,7 +71,7 @@
+ tidigitsdata=`(cd $srcdir/model/hmm/tidigits && find . -type f -print | egrep -v '(Makefile|CVS|\.svn)')`
+ tidigitsdata=`echo $tidigitsdata`
+ 
+-lmdata=`ls -1 $srcdir/model/lm/an4 | egrep -v '(Makefile|CVS)' | sed 's/\.in//g'`
++lmdata=`ls -1 $srcdir/model/lm/an4 | egrep -v '(Makefile|CVS)' | sed 's/\.in//g' | sort -u`
+ lmdata=`echo $lmdata`
+ 
+ docdata=`ls -1 $srcdir/doc | egrep -v '(Makefile|CVS)'`

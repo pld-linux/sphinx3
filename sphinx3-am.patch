@@ -1,0 +1,7 @@
+--- sphinx3-0.8/src/tests/unit_tests/test_logs3/Makefile.am.orig	2009-01-01 05:08:51.000000000 +0100
++++ sphinx3-0.8/src/tests/unit_tests/test_logs3/Makefile.am	2018-03-04 22:05:27.279616164 +0100
+@@ -8,4 +8,3 @@
+ LDADD = ${top_builddir}/src/libs3decoder/libs3decoder.la \
+         -lsphinxbase -lm @ad_libs@
+ 
+-TESTS = $(wildcard _*.test) 
